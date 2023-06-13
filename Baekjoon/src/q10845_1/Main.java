@@ -22,10 +22,10 @@ public class Main {
 				if (st.countTokens() == 2) {
 					cmd = st.nextToken();
 					value = st.nextToken();
-				}else {
+				} else {
 					cmd = st.nextToken();
 				}
-				
+
 				switch (cmd) {
 				case "push":
 					int v = Integer.parseInt(value);
@@ -41,7 +41,8 @@ public class Main {
 					q.back();
 					break;
 				case "size":
-					q.size();
+					int size = q.size();
+					System.out.println(size);
 					break;
 				case "empty":
 					q.empty();

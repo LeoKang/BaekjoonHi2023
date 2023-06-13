@@ -12,37 +12,45 @@ public class SJQueue {
 	}
 
 	public void push(int x) {
-		if (front == -1 && back == -1) {
-			ar[++back] = x;
+		if (front == -1) {
 			front++;
+			ar[++back] = x;
 		} else {
 			ar[++back] = x;
 		}
-
 	}
 
 	public void pop() {
-		if (back - front + 1 == 0) {
+		if (size() == 0) {
 			System.out.println("-1");
+		} else if (size() == 1) {
+			System.out.println(ar[front++]);
+			front = -1;
+			back = -1;
 		} else {
 			System.out.println(ar[front++]);
 		}
 	}
 
-	public void size() {
-		System.out.println(back - front + 1);
+	public int size() {
+		if (front == -1 && back == -1) {
+			return 0;
+		} else
+			return back - front + 1;
 	}
 
-	public void empty() {
-		if (back - front + 1 == 0) {
+	public boolean empty() {
+		if (size() == 0) {
 			System.out.println("1");
+			return true;
 		} else {
 			System.out.println("0");
+			return false;
 		}
 	}
 
 	public void front() {
-		if (back - front + 1 == 0) {
+		if (size() == 0) {
 			System.out.println("-1");
 		} else {
 			System.out.println(ar[front]);
@@ -50,7 +58,7 @@ public class SJQueue {
 	}
 
 	public void back() {
-		if (back - front + 1 == 0) {
+		if (size() == 0) {
 			System.out.println("-1");
 		} else {
 			System.out.println(ar[back]);
