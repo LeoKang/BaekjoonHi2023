@@ -42,10 +42,18 @@ public class SJQueue {
 	}
 
 	public void front() {
-		System.out.println(front + 1);
+		if (back - front + 1 == 0) {
+			System.out.println("-1");
+		} else {
+			System.out.println(ar[front]);
+		}
 	}
 
 	public void back() {
-		System.out.println(back + 1);
+		if (back - front + 1 == 0) {
+			System.out.println("-1");
+		} else {
+			System.out.println(ar[back]);
+		}
 	}
 }

@@ -11,17 +11,21 @@ public class Main {
 		try {
 			String line = br.readLine();
 			int n = Integer.parseInt(line);
-			SJQueue q = new SJQueue(n + 1);
+			SJQueue q = new SJQueue(10000);
 			for (int i = 0; i < n; i++) {
 				line = br.readLine();
 				StringTokenizer st = new StringTokenizer(line);
+
 				String cmd = "";
 				String value = "";
-				cmd = st.nextToken();
-				if (st.countTokens() == 2) {
-					value = st.nextToken();
-				}
 
+				if (st.countTokens() == 2) {
+					cmd = st.nextToken();
+					value = st.nextToken();
+				}else {
+					cmd = st.nextToken();
+				}
+				
 				switch (cmd) {
 				case "push":
 					int v = Integer.parseInt(value);
